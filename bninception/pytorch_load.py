@@ -32,8 +32,6 @@ class BNInception(nn.Module):
                 channel = sum([self._channel_dict[x] for x in in_var])
                 self._channel_dict[out_var[0]] = channel
 
-        self.load_state_dict(torch.utils.model_zoo.load_url(weight_url))
-
     def forward(self, input):
         data_dict = dict()
         data_dict[self._op_list[0][-1]] = input
